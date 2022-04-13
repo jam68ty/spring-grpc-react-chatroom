@@ -19,7 +19,7 @@ public class PushService extends PushServiceGrpc.PushServiceImplBase {
     private ChannelObserver channelObserver;
 
     @Override
-    public void chatRoomStream(com.shoalter.push.ChatRoomStreamRequest request,
+    public void joinChatRoomStream(com.shoalter.push.ChatRoomStreamRequest request,
                                io.grpc.stub.StreamObserver<com.shoalter.push.ChatRoomStreamReply> responseObserver) {
         channelObserver.subscribe(request.getChatroomID(), request.getUserID(), responseObserver);
     }
